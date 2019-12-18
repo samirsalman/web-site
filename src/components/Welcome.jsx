@@ -39,13 +39,8 @@ export default function Welcome() {
               </Title>
               <br></br>
 
-              <p style={{ color: "#fff" }}>"It's not a bug, is a feature"</p>
+              <p style={{ color: "#fff" }}>"It's not a bug, it's a feature"</p>
             </Typist>
-            <img
-              alt="emoji"
-              width="80px"
-              src="https://149366088.v2.pressablecdn.com/wp-content/uploads/2019/11/lol-emoji-300x246.png"
-            ></img>
           </Row>
         </Col>
       </Row>

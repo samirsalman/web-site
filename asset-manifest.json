@@ -1,25 +1,29 @@
 {
   "files": {
-    "main.css": "/web-site/static/css/main.802392dc.chunk.css",
-    "main.js": "/web-site/static/js/main.e2f24c64.chunk.js",
-    "main.js.map": "/web-site/static/js/main.e2f24c64.chunk.js.map",
+    "main.css": "/web-site/static/css/main.c25405b0.chunk.css",
+    "main.js": "/web-site/static/js/main.d84566fd.chunk.js",
+    "main.js.map": "/web-site/static/js/main.d84566fd.chunk.js.map",
     "runtime-main.js": "/web-site/static/js/runtime-main.44e8e30d.js",
     "runtime-main.js.map": "/web-site/static/js/runtime-main.44e8e30d.js.map",
-    "static/css/2.bead03cf.chunk.css": "/web-site/static/css/2.bead03cf.chunk.css",
-    "static/js/2.bd7efcae.chunk.js": "/web-site/static/js/2.bd7efcae.chunk.js",
-    "static/js/2.bd7efcae.chunk.js.map": "/web-site/static/js/2.bd7efcae.chunk.js.map",
+    "static/css/2.b78fb1d4.chunk.css": "/web-site/static/css/2.b78fb1d4.chunk.css",
+    "static/js/2.8bda6634.chunk.js": "/web-site/static/js/2.8bda6634.chunk.js",
+    "static/js/2.8bda6634.chunk.js.map": "/web-site/static/js/2.8bda6634.chunk.js.map",
     "index.html": "/web-site/index.html",
-    "precache-manifest.a257be49336867b4fae426bfc6309b99.js": "/web-site/precache-manifest.a257be49336867b4fae426bfc6309b99.js",
+    "precache-manifest.b6ba3e131e4d84724f2b70e4a3d51b2b.js": "/web-site/precache-manifest.b6ba3e131e4d84724f2b70e4a3d51b2b.js",
     "service-worker.js": "/web-site/service-worker.js",
-    "static/css/2.bead03cf.chunk.css.map": "/web-site/static/css/2.bead03cf.chunk.css.map",
-    "static/css/main.802392dc.chunk.css.map": "/web-site/static/css/main.802392dc.chunk.css.map",
-    "static/js/2.bd7efcae.chunk.js.LICENSE": "/web-site/static/js/2.bd7efcae.chunk.js.LICENSE"
+    "static/css/2.b78fb1d4.chunk.css.map": "/web-site/static/css/2.b78fb1d4.chunk.css.map",
+    "static/css/main.c25405b0.chunk.css.map": "/web-site/static/css/main.c25405b0.chunk.css.map",
+    "static/js/2.8bda6634.chunk.js.LICENSE": "/web-site/static/js/2.8bda6634.chunk.js.LICENSE",
+    "static/media/app1.png": "/web-site/static/media/app1.7f432312.png",
+    "static/media/avatar.jpg": "/web-site/static/media/avatar.a33ea395.jpg",
+    "static/media/device-mockups.min.css": "/web-site/static/media/portrait_white.f7b169ae.png",
+    "static/media/playstore.png": "/web-site/static/media/playstore.a8692ada.png"
   },
   "entrypoints": [
     "static/js/runtime-main.44e8e30d.js",
-    "static/css/2.bead03cf.chunk.css",
-    "static/js/2.bd7efcae.chunk.js",
-    "static/css/main.802392dc.chunk.css",
-    "static/js/main.e2f24c64.chunk.js"
+    "static/css/2.b78fb1d4.chunk.css",
+    "static/js/2.8bda6634.chunk.js",
+    "static/css/main.c25405b0.chunk.css",
+    "static/js/main.d84566fd.chunk.js"
   ]
 }

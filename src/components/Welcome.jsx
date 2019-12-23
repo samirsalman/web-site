@@ -23,9 +23,9 @@ export default function Welcome() {
                   color: "#a83e32",
                   backgroundColor: "#fde3cf"
                 }}
-              >
-                S
-              </Avatar>
+                src={require("../avatar.jpg")}
+                alt="download"
+              ></Avatar>
               <Title level={1} style={{ color: "#fff" }}>
                 Samir Salman
               </Title>

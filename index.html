@@ -16,8 +16,11 @@
       type="text/css"
     />
     <title>Samir Salman</title>
+
   </head>
-  <body class="container mx-auto">
+  <body class="container mx-auto" onload="timer()">
+    <script src="./script.js"></script>
+
     <div
       class="hero min-h-screen"
       style="
@@ -68,9 +71,43 @@ challenges.
       <li class="step step-primary">2019 Start Master Degree</li>
       <li class="step step-success">2021 Master Degree</li>
     </ul>
+
+          
+<div class="grid grid-flow-col gap-5 text-center auto-cols-max justify-center p-16 countdow">
+  <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content" >
+    <span class="font-mono text-5xl">
+      <span id="days" style="--value:0;" ></span>
+    </span>
+        days
+      
+  </div> 
+  <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+    <span class="font-mono text-5xl">
+      <span id="hours" style="--value:0;"></span>
+    </span>
+        hours
+  </div> 
+  <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+    <span class="font-mono text-5xl">
+      <span id="minutes" style="--value:0;"></span>
+    </span>
+        min
+      
+  </div> 
+  <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+    <span class="font-mono text-5xl">
+      <span id="seconds" style="--value:0;"></span>
+    </span>
+        sec
+  </div>
+
+</div>
+
     <p class="container text-white text-2xl pl-8 pt-8  pr-8 font-bold text-center">
       🍕 I ALSO LOVE PIZZA! 🍕
         </p>
+
+  
 </div>
 
 <div class="divider"></div> 
@@ -135,6 +172,106 @@ challenges.
 </div>
 
 <div class="divider"></div> 
+
+
+<div class="container ">
+  <h1  class="mb-5 text-5xl font-bold text-white pl-16 pt-16">
+    My Projects
+</h1>
+
+<div class="grid lg:grid-cols-3 md:grid-cols-2 p-12 gap-4">
+
+  
+  <div class="card shadow-2xl lg:card-side bg-gradient-to-r from-indigo-300 to-purple-400 text-primary-content">
+    <div class="card-body">
+      <p class="contacts font-bold text-2xl ">Combining Transformer-based Architectures and Transfer Learning for Robust Stance Detection</p> 
+      <p class="contacts font-light text-l"> Best System of Evalita2020, it implements a transformer-based architecture whose accuracy is improved by adopting a Transfer Learning technique.  </p>
+      <div class="justify-end card-actions">
+        <a href="http://ceur-ws.org/Vol-2765/paper99.pdf" target="_blank"><button class="btn btn-yellow">
+              View
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 ml-2 stroke-current"><!----> <!----> 
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---->
+          </svg>
+        </button>
+      </a>
+      </div>
+    </div>
+  </div> 
+
+  <div class="card shadow-2xl lg:card-side bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-primary-content">
+    <div class="card-body">
+      <p class="contacts font-bold text-2xl ">BERT News Category Classification</p> 
+      <p class="contacts font-light text-l">News Category Classification with BERT based architecture.</p>
+      <div class="justify-end card-actions">
+        <a href="https://www.kaggle.com/samirsalman97/newscategory" target="_blank"><button class="btn btn-yellow">
+              View
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 ml-2 stroke-current"><!----> <!----> 
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---->
+          </svg>
+        </button>
+      </a>
+      </div>
+    </div>
+  </div> 
+
+  
+  <div class="card shadow-2xl lg:card-side bg-gradient-to-r from-blue-500 to-blue-600 text-primary-content">
+    <div class="card-body">
+      <p class="contacts font-bold text-2xl ">HoneyChain MMORPG Blockchain based game </p> 
+      <p class="contacts font-light text-l">An MMORPG Blockchain based game</p>
+      <div class="justify-end card-actions">
+        <a href="https://github.com/samirsalman/HoneyChain-MMORPG-Blockchain-based-game-" target="_blank"><button class="btn btn-yellow">
+              View
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 ml-2 stroke-current"><!----> <!----> 
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---->
+          </svg>
+        </button>
+      </a>
+      </div>
+    </div>
+  </div> 
+
+
+  <div class="card shadow-2xl lg:card-side bg-gradient-to-r from-green-500 to-green-700  text-primary-content">
+    <div class="card-body">
+      <p class="contacts font-bold text-2xl ">AmazonOffer - TelegramBot </p> 
+      <p class="contacts font-light text-l">This project is a production-ready Telegram Bot connected to a Telegram Channel that check Amazon offers and send them to your Channel.</p>
+      <div class="justify-end card-actions">
+        <a href="https://github.com/samirsalman/AmazonOffers-TelegramBot" target="_blank"><button class="btn btn-yellow">
+              View
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 ml-2 stroke-current"><!----> <!----> 
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---->
+          </svg>
+        </button>
+      </a>
+      </div>
+    </div>
+  </div> 
+
+  
+
+  <div class="card shadow-2xl lg:card-side bg-red-200 text-primary-content">
+    <div class="card-body">
+      <p class="contacts font-bold text-2xl ">Other Projects</p> 
+      <div class="justify-end card-actions">
+        <a href="https://github.com/samirsalman?tab=repositories" target="_blank" ><button class="btn btn-yellow">
+              Show all
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 ml-2 stroke-current"><!----> <!----> 
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!---->
+          </svg>
+        </button>
+      </a>
+      </div>
+    </div>
+  </div> 
+
+  
+
+</div>
+</div>
+
+<div class="divider"></div> 
+
 
 <div class="container">
   <h1  class="mb-5 text-5xl font-bold text-white pl-16 pt-16">
@@ -202,6 +339,8 @@ challenges.
 </h1>
   <a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/_samirsalman?ref_src=twsrc%5Etfw">Tweets by _samirsalman</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
+
+
 
   </body>
   <div class="divider"></div> 

@@ -15,3 +15,12 @@ html{
 .twitter-timeline{
     height: 100%;
 }
+
+.section{
+    scroll-snap-align: start;
+}
+
+#bodyscroll{
+    scroll-snap-type: y proximity;
+    
+}

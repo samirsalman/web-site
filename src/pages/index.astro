@@ -1,0 +1,71 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+
+<head>
+	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+
+<body>
+	<Header />
+	<main>
+		<h1>👋 Hi, I'm <b>Samir Salman</b></h1>
+		<p>
+			I am a seasoned MLOps Engineer specializing in <b>Natural Language Processing (NLP)</b> applications.
+			My proficiency lies in orchestrating the end-to-end process of training, building, and deploying models into
+			production environments.
+			With a primary focus on NLP tasks, including <b>Machine Translation</b>, <b>Text Classification</b>,
+			<b>Summarization</b>, and <b>Semantic Search</b>,.
+			I aim to seamlessly connect research endeavors with practical deployment, driving tangible outcomes.
+			My ultimate objective is to facilitate the seamless transition of cutting-edge NLP innovations into
+			real-world applications, ensuring impactful results.
+		</p>
+		<p>
+			Currently I'm focusing on:
+		<ul>
+			<li> 🔎 RAG system in production </li>
+			<li> 🤖 AI agents </li>
+			<li> 🔃 MLOps flows </li>
+		</ul>
+		</p>
+
+		<h3>
+			📦 Some of my GitHub repositories:
+		</h3>
+
+		<ul>
+			<li>
+				📰 <a href="https://github.com/samirsalman/notiziario">Notiziario</a> - Notiziario is a Python
+				application
+				designed to enrich news articles with additional information using Large Language Models (LLMs). It
+				retrieves news articles periodically, cleans their summaries, extracts entities, sentiments, categories,
+				and keywords using an LLM, and stores the enriched data in a knowledge base.
+			<li>
+				📜 <a href="https://github.com/samirsalman/docugenius">Docugenius</a> - Docugenius is a tool that
+				generates
+				documentation for your python code using LLMs. The library provides a simple CLI interface to generate
+				using genAI.
+			</li>
+			<li>
+				🖤 <a href="https://github.com/samirsalman/neuropulse">Neuropulse</a> - A GPU monitoring tool for NVIDIA
+				GPUs. It is a simple tool that can be used to monitor the GPU usage and temperature of NVIDIA GPUs. It
+				is written in Python and uses the nvidia-smi tool to get the GPU information. It can be used to monitor
+				the GPU usage and temperature of multiple GPUs in a node or in a cluster (using a mongoDB database).
+			</li>
+			<li>
+				🧐 <a href="https://github.com/samirsalman/it-classifier-onnx-deploy">Simple ONNX deployment example</a>
+				This is a simple example of how to deploy an ONNX model using FastAPI.
+			</li>
+
+		</ul>
+	</main>
+	<Footer />
+</body>
+
+</html>

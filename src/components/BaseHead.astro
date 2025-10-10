@@ -10,16 +10,17 @@ interface Props {
 	image?: string;
 }
 
+const basePath = import.meta.env.BASE_URL ?? '/';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = 'blog-placeholder-1.jpg' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/a1/a14c3e942b9f11845b0e82f36c08726f33fe627b.jpg"/>
-<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="sitemap" href={`${basePath}sitemap-index.xml`} />
 <link
 	rel="alternate"
 	type="application/rss+xml"
@@ -29,8 +30,8 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+<link rel="preload" href={`${basePath}fonts/atkinson-regular.woff`} as="font" type="font/woff" crossorigin />
+<link rel="preload" href={`${basePath}fonts/atkinson-bold.woff`} as="font" type="font/woff" crossorigin />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />

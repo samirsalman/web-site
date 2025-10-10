@@ -5,15 +5,18 @@
  */
 
 :root {
-	--accent: yellow;
-	--accent-dark: #f0b429;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+	--accent: #b388ff;
+	--accent-dark: #8054e3;
+	--bg-primary: #05060f;
+	--bg-secondary: rgba(15, 18, 28, 0.8);
+	--bg-highlight: rgba(35, 38, 58, 0.6);
+	--border-glass: rgba(255, 255, 255, 0.08);
+	--shadow-soft: 0 24px 60px rgba(4, 6, 14, 0.45);
+	--text-primary: #f6f6ff;
+	--text-muted: rgba(239, 240, 255, 0.65);
+	--gray: 110, 118, 148;
+	--gray-light: 212, 216, 237;
+	--gray-dark: 52, 60, 89;
 }
 
 @font-face {
@@ -37,22 +40,38 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background-color: #2234ae;
-	background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
-	background-repeat: no-repeat;
-
+	background: radial-gradient(circle at 15% 25%, rgba(128, 84, 227, 0.25), transparent 45%),
+		radial-gradient(circle at 85% 10%, rgba(69, 217, 217, 0.18), transparent 55%),
+		radial-gradient(circle at 50% 90%, rgba(255, 140, 105, 0.16), transparent 50%),
+		var(--bg-primary);
+	background-attachment: fixed;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: white;
-	font-size: 20px;
-	line-height: 1.7;
+	color: var(--text-primary);
+	font-size: 19px;
+	line-height: 1.8;
+	overflow-x: hidden;
 }
 
+.home,
 main {
-	width: 720px;
-	max-width: calc(100% - 2em);
+	width: min(1024px, 92vw);
 	margin: auto;
-	padding: 3em 1em;
+	padding: 4.5rem 0 3.5rem;
+}
+
+.home {
+	display: grid;
+	gap: 3.5rem;
+}
+
+.hero {
+	display: grid;
+	gap: 1.5rem;
+}
+
+.hero h1 {
+	max-width: 18ch;
 }
 
 h1,
@@ -61,9 +80,9 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0 0 0.5rem 0;
-	color: white;
-	line-height: 1.2;
+	margin: 0 0 0.4rem 0;
+	color: var(--text-primary);
+	line-height: 1.15;
 }
 
 h1 {
@@ -93,10 +112,11 @@ b {
 
 a {
 	color: var(--accent);
+	transition: color 0.2s ease;
 }
 
 a:hover {
-	color: var(--accent);
+	color: var(--accent-dark);
 }
 
 p {
@@ -201,36 +221,453 @@ divider {
 	color: white;
 }
 
-.publication-grid {
+.eyebrow {
+	text-transform: uppercase;
+	letter-spacing: 0.18em;
+	font-size: 0.75rem;
+	color: var(--text-muted);
+	margin-bottom: 1rem;
+}
+
+.intro {
+	max-width: 640px;
+	color: var(--text-muted);
+}
+
+.cta-group {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 32px;
+	gap: 1rem;
+	margin-top: 2.5rem;
 }
 
-.experience-grid {
+.cta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.85rem 1.6rem;
+	border-radius: 999px;
+	font-size: 0.95rem;
+	font-weight: 600;
+	border: 1px solid transparent;
+	transition: all 0.2s ease;
+}
+
+.cta.primary {
+	background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+	color: #0d0f1a;
+	box-shadow: var(--shadow-soft);
+}
+
+.cta.primary:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 18px 45px rgba(127, 90, 240, 0.35);
+}
+
+.cta.secondary {
+	border-color: rgba(255, 255, 255, 0.18);
+	color: var(--text-primary);
+}
+
+.cta.secondary:hover {
+	border-color: rgba(255, 255, 255, 0.4);
+	color: #ffffff;
+}
+
+section {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 32px;
+	gap: 1.5rem;
 }
 
-.award,
-.publication,
-.role {
-	background: #1a1a1a;
+.impact-grid,
+.project-grid,
+.experience-cards,
+.timeline-grid,
+.education-grid,
+.recognition-grid,
+.chip-grid,
+.publication-grid,
+.details {
+	display: grid;
+	gap: 1.5rem;
+}
+
+.impact-grid {
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.metric {
 	padding: 1.5rem;
-	border-radius: 12px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s ease-in-out;
+	border-radius: 16px;
+	background: var(--bg-secondary);
+	border: 1px solid var(--border-glass);
+	backdrop-filter: blur(16px);
+	box-shadow: var(--shadow-soft);
 }
 
-.award:hover,
-.publication:hover,
-.role:hover {
-	transform: translateY(-5px);
+.metric-value {
+	display: block;
+	font-size: 2.4rem;
+	font-weight: 700;
+}
+
+.metric-label {
+	color: var(--text-muted);
+	font-size: 0.95rem;
+}
+
+.focus ul {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	gap: 1rem;
+}
+
+.focus li {
+	padding: 1.25rem 1.5rem;
+	border-radius: 16px;
+	background: var(--bg-secondary);
+	border: 1px solid var(--border-glass);
+	color: var(--text-muted);
+}
+
+.focus strong {
+	display: block;
+	color: var(--text-primary);
+	margin-bottom: 0.35rem;
+}
+
+.experience-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.experience-cards article,
+.project-grid article,
+.timeline-grid article,
+.education-grid article,
+.recognition-grid article,
+.publication-grid article {
+	padding: 1.75rem;
+	border-radius: 18px;
+	background: var(--bg-secondary);
+	border: 1px solid var(--border-glass);
+	backdrop-filter: blur(22px);
+	box-shadow: var(--shadow-soft);
+	transition: transform 0.25s ease, border-color 0.2s ease;
+}
+
+.experience-cards article:hover,
+.project-grid article:hover,
+.timeline-grid article:hover,
+.education-grid article:hover,
+.recognition-grid article:hover,
+.publication-grid article:hover {
+	transform: translateY(-4px);
+	border-color: rgba(179, 136, 255, 0.35);
+}
+
+.project-grid {
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.project-grid ul {
+	list-style: none;
+	display: flex;
+	gap: 0.5rem;
+	padding: 0;
+	margin: 1.25rem 0 0 0;
+}
+
+.project-grid li {
+	padding: 0.35rem 0.8rem;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.08);
+	font-size: 0.8rem;
+	color: var(--text-muted);
+}
+
+.playground .game-card {
+	padding: 2rem;
+	border-radius: 18px;
+	background: var(--bg-secondary);
+	border: 1px solid var(--border-glass);
+	box-shadow: var(--shadow-soft);
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"header"
+		"stage"
+		"stats"
+		"quote";
+}
+
+.game-header {
+	display: grid;
+	gap: 1rem;
+	align-items: flex-start;
+	grid-area: header;
+}
+
+.game-header-main {
+	display: grid;
+	gap: 1rem;
+}
+
+.game-instructions {
+	margin: 0;
+	color: var(--text-muted);
+	font-size: 1.05rem;
+}
+
+.game-stats {
+	display: flex;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.95rem;
+	color: var(--text-muted);
+	grid-area: stats;
+}
+
+.game-stats strong {
+	color: var(--text-primary);
+}
+
+.game-stage {
+	display: grid;
+	gap: 0.85rem;
+	justify-items: center;
+	grid-area: stage;
+}
+
+.game-stage canvas {
+	width: min(100%, 360px);
+	height: auto;
+	border-radius: 20px;
+	border: 1px solid rgba(179, 136, 255, 0.35);
+	box-shadow: 0 12px 45px rgba(17, 5, 36, 0.4);
+	background: radial-gradient(circle at 20% 20%, rgba(179, 136, 255, 0.25), rgba(16, 8, 38, 0.9));
+	image-rendering: pixelated;
+	max-width: 100%;
+}
+
+.game-status {
+	margin: 0;
+	min-height: 1.4em;
+	color: var(--text-muted);
+}
+
+.game-quote {
+	grid-area: quote;
+}
+
+.game-quote p {
+	margin: 0 0 0.5rem 0;
+}
+
+.game-quote blockquote {
+	margin: 0;
+	border-left-color: rgba(179, 136, 255, 0.6);
+	font-size: 1rem;
+}
+
+@media (min-width: 720px) {
+	.game-header-main {
+		grid-template-columns: auto;
+	}
+
+	.game-header-main .cta {
+		justify-self: start;
+	}
+
+	.game-stats {
+		justify-content: flex-start;
+		align-items: flex-start;
+		text-align: left;
+	}
+}
+
+@media (min-width: 1024px) {
+	.playground .game-card {
+		padding: 2.75rem;
+		gap: 2.25rem;
+		grid-template-columns: minmax(260px, 320px) minmax(320px, 1fr) minmax(140px, 220px);
+		grid-template-areas:
+			"header stage stats"
+			"quote stage stats";
+		align-items: start;
+	}
+
+	.game-header-main {
+		gap: 1.25rem;
+	}
+
+	.game-header-main .cta {
+		justify-self: start;
+	}
+
+	.game-stage {
+		gap: 1.2rem;
+	}
+
+	.game-stats {
+		justify-content: flex-end;
+		align-items: flex-end;
+		flex-direction: column;
+		gap: 0.65rem;
+		text-align: right;
+	}
+
+	.game-stage canvas {
+		width: 420px;
+	}
+
+	.game-status {
+		font-size: 1.05rem;
+	}
+
+	.game-quote blockquote {
+		font-size: 1.05rem;
+	}
+}
+
+.section-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.section-link {
+	font-size: 0.9rem;
+	color: var(--text-muted);
+}
+
+.section-link:hover {
+	color: var(--accent);
+}
+
+.timeline-grid article ul {
+	margin: 1rem 0 0 0;
+	padding-left: 1.1rem;
+	color: var(--text-muted);
+}
+
+.timeline-grid article ul li+li {
+	margin-top: 0.5rem;
+}
+
+.education-grid p,
+.recognition-grid p,
+.publication-grid p {
+	color: var(--text-muted);
+}
+
+.chip-grid {
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.chip-grid span {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.55rem 1rem;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.07);
+	color: var(--text-muted);
+	font-size: 0.85rem;
+}
+
+.details {
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.details ul {
+	margin: 0.75rem 0 0 0;
+	padding-left: 1.1rem;
+	color: var(--text-muted);
+}
+
+.publication-grid {
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.publication-grid a {
+	font-size: 0.9rem;
+}
+
+.recognition-grid article h3 {
+	margin-bottom: 0.6rem;
+}
+
+.experience .job,
+.additional-experience,
+.publications {
+	padding: 0;
 }
 
 html,
-main,
-header {
+body {
 	scroll-behavior: smooth;
+}
+
+@media (max-width: 720px) {
+	body {
+		font-size: 18px;
+	}
+
+	.home,
+	main {
+		padding: 3rem 0 2.5rem;
+	}
+
+	.hero {
+		text-align: left;
+	}
+
+	.hero h1 {
+		font-size: clamp(2.1rem, 8vw, 2.6rem);
+	}
+
+	.hero .intro {
+		font-size: 1.05rem;
+	}
+
+	.cta-group {
+		gap: 0.75rem;
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.section-heading {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.project-grid,
+	.impact-grid,
+	.playground .game-card {
+		grid-template-columns: 1fr;
+	}
+
+	section {
+		gap: 1.25rem;
+	}
+
+	.project-grid article,
+	.experience-cards article,
+	.timeline-grid article,
+	.education-grid article,
+	.recognition-grid article,
+	.publication-grid article,
+	.playground .game-card {
+		padding: 1.4rem;
+	}
+
+	.metric {
+		padding: 1.25rem;
+	}
 }

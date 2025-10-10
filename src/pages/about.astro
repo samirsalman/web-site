@@ -3,115 +3,183 @@ import Layout from '../layouts/BlogPost.astro';
 ---
 
 <Layout
-	title="About Me"
-	description="Learn more about me, my experience, education, and publications."
-	pubDate={new Date('Jan 29 2025')}
+  title="About Me"
+  description="Learn more about me, my experience, education, and publications."
+  pubDate={new Date('Jan 29 2025')}
 >
+  <div class="about-page">
+  <section class="summary">
+    <h2>Why I build AI products</h2>
+    <p>
+      I’m a Rome-based MLOps engineer who thrives at the intersection of applied research and production systems. I get
+      teams shipping faster by pairing robust infrastructure with pragmatic workflows—from GPU orchestration and data
+      pipelines to safety tooling for customer-facing agents.
+    </p>
+  </section>
 
-<section class="education">
-  <h2>🎓 Education</h2>
-  <br>
-  <!-- Master's Degree Section -->
-  <div class="degree">
-    <h4>📘 Master's Degree</h4>
-	<p>I studied at the University of Rome "Tor Vergata" from 2019 to 2021, where I pursued a Master's Degree in Computer Science with a specialization in Artificial Intelligence. My thesis was titled <strong>"Evaluation of Explainability of Machine Learning Models: ERO-MD Explainable Model for Migraine Diagnosis"</strong> and was supervised by Prof. Fabio Massimo Zanzotto. I graduated with honors, receiving a final grade of <strong>110 cum laude</strong> 🎉.</p>
-	<p>My research focused on the development of an explainable machine learning model for migraine diagnosis 🧠💡. The model, named <strong>ERO-MD</strong>, was evaluated on a real-world dataset of migraine patients and demonstrated promising results in terms of accuracy and explainability. This work contributed to increasing transparency in AI-driven healthcare solutions.</p>
-  </div>
-<br>
-
-<div>
-<h4>📗 Bachelor's Degree</h4>
-<p>I completed my Bachelor's Degree in Computer Science at the University of Mac Lane and Knights from 2016 to 2019. During my undergraduate studies, I developed a keen interest in artificial intelligence and machine learning 🤖, which led me to pursue a career in this field. </p>
-<p>My thesis focused on the <strong>automation of semantic annotations and the population of ontologies</strong>, specifically in the context of resolutions of the United Nations 🌍. I worked under the supervision of Prof. Armando Stellato and successfully defended my thesis, receiving positive feedback from the examination committee 🙌.</p>
-</div>
-
-</section>
-
-<section class="publications">
-<h2>📄 Publications</h2>
-<div class="publication-grid">
-<br>
-    <div class="publication">
-    <h4>📜 Every time I fire a conversational designer, the performance of the dialog system goes down</h4>
-	<a href="https://aclanthology.org/2022.lrec-1.15.pdf" target="_blank">Read the paper</a>
-    <p><strong>ACL</strong> | 2022</p>
-  </div>
-
-  <div class="publication">
-    <h4>📜 Combining Transformer-based architectures and Transfer Learning for robust Stance Detection</h4>
-	<a href="https://ceur-ws.org/Vol-2765/paper99.pdf" target="_blank">Read the paper</a>
-    <p><strong>EVALITA</strong> | 2020</p>
-  </div>
-</div>
-
-</section>
-
-
-<section class="additional-experience">
-  <h2>🏆 Additional Experience & Rewards</h2>
-  <div class="experience-grid">
-    
-    <div class="award">
-      <h4>🥇 Best System Award</h4>
-      <p><strong>EVALITA 2020</strong> (Italian National NLP Competition) | Dec 2020</p>
-      <p>Achieved 1st place in the SardiStance Task at the prestigious Italian NLP competition.</p>
+  <section class="timeline">
+    <h2>Experience</h2>
+    <div class="timeline-grid">
+      <article>
+        <header>
+          <h3>Stip AI · Lead ML Engineer</h3>
+          <p>Sep 2024 – Present · Rome, Italy</p>
+        </header>
+        <ul>
+          <li>Built the AI organisation from the ground up, owning hiring, roadmap definition, and delivery.</li>
+          <li>Designed a multi-agent voice platform on LangGraph + LangChain with tight latency budgets.</li>
+          <li>Scaled RAG pipelines through metadata-rich ingestion, automated evaluation, and CI/CD.</li>
+        </ul>
+      </article>
+      <article>
+        <header>
+          <h3>Translated · MLOps Engineer & AI Production Lead</h3>
+          <p>Feb 2022 – Sep 2024 · Rome, Italy</p>
+        </header>
+        <ul>
+          <li>Led a cross-functional engineering pod maintaining 100+ machine translation models in production.</li>
+          <li>Migrated AI infrastructure to a geo-distributed Kubernetes + SLURM stack, reducing idle GPU time by 30%.</li>
+          <li>Developed an internal annotation platform producing 100k+ high-quality datapoints for proprietary LLMs.</li>
+        </ul>
+      </article>
+      <article>
+        <header>
+          <h3>Stip · AI Specialist</h3>
+          <p>Sep 2021 – Feb 2022 · Rome, Italy</p>
+        </header>
+        <ul>
+          <li>Shipped customer-care NLP solutions end-to-end—from data preparation to monitoring in production.</li>
+          <li>Implemented reproducible ML workflows with MLflow, DVC, and automated deployment tooling.</li>
+        </ul>
+      </article>
+      <article>
+        <header>
+          <h3>University of Rome “Tor Vergata” · NLP Research Scholar</h3>
+          <p>Sep 2020 – Feb 2021 · Rome, Italy</p>
+        </header>
+        <ul>
+          <li>Explored rule injection for neural dialog systems and authored an LREC 2022 publication.</li>
+          <li>Collaborated with AlmaWave to evaluate explainability techniques for healthcare diagnostics.</li>
+        </ul>
+      </article>
     </div>
-    
-    <div class="award">
-      <h4>🥈 2nd Place at HackParty W21</h4>
-      <p><strong>Pi Campus</strong> | Rome, Italy | 2022</p>
-      <p>Secured 2nd place in the AI Challenge at HackParty W21, competing against top talents in AI innovation.</p>
+  </section>
+
+  <section class="education">
+    <h2>Education</h2>
+    <div class="education-grid">
+      <article>
+        <h3>M.Sc. Computer Science · 110/110 cum laude</h3>
+        <p>University of Rome “Tor Vergata” · 2019 – 2021</p>
+        <p>Thesis: <em>Evaluation of Explainability of Machine Learning Models: ERO-MD Explainable Model for Migraine Diagnosis</em></p>
+      </article>
+      <article>
+        <h3>B.Sc. Computer Science</h3>
+        <p>University of Rome “Tor Vergata” · 2016 – 2019</p>
+        <p>Thesis: <em>Automation in semantic annotations and ontology population for United Nations resolutions</em></p>
+      </article>
     </div>
-    
-    <div class="role">
-      <h4>🎤 Computer Science Students Representative</h4>
-      <p><strong>University of Rome "Tor Vergata"</strong> | Rome, Italy | 2017 - 2021</p>
-      <p>Actively represented Computer Science students, facilitating discussions between faculty and students to improve academic programs.</p>
+  </section>
+
+  <section class="skills">
+    <h2>Skills snapshot</h2>
+    <div class="chip-grid">
+      <span>Python</span>
+      <span>PyTorch</span>
+      <span>LangChain</span>
+      <span>LangGraph</span>
+      <span>TensorRT</span>
+      <span>vLLM</span>
+      <span>Kubernetes</span>
+      <span>Docker</span>
+      <span>SLURM</span>
+      <span>MLflow</span>
+      <span>Airflow</span>
+      <span>GitHub Actions</span>
+      <span>Postgres</span>
+      <span>MongoDB</span>
+      <span>Redis</span>
     </div>
-    
-    <div class="role">
-      <h4>🚀 Computer Science Hackathon Organizer</h4>
-      <p><strong>University of Rome "Tor Vergata"</strong> | Rome, Italy | 2019</p>
-      <p>Organized and managed hackathons, fostering a collaborative environment for innovation and problem-solving in computer science.</p>
+  </section>
+
+  <section class="recognition">
+    <h2>Recognition & community</h2>
+    <div class="recognition-grid">
+      <article>
+        <h3>EVALITA 2020 · Best System Award</h3>
+        <p>1st place in the SardiStance task at the national Italian NLP competition.</p>
+      </article>
+      <article>
+        <h3>Pi Campus HackParty W21 · 2nd Place</h3>
+        <p>Runner-up in the AI Challenge, delivering a production-ready prototype in under 48 hours.</p>
+      </article>
+      <article>
+        <h3>Student Representative & Hackathon Organizer</h3>
+        <p>Advocated for Computer Science students and curated innovation events at Tor Vergata (2017–2021).</p>
+      </article>
     </div>
-  </div>
-</section>
+  </section>
 
+  <section class="publications">
+    <h2>Publications</h2>
+    <div class="publication-grid">
+      <article>
+        <h3>Every Time I Fire a Conversational Designer...</h3>
+        <p>LREC · 2022</p>
+        <a href="https://aclanthology.org/2022.lrec-1.15.pdf" target="_blank" rel="noopener">Read the paper ↗</a>
+      </article>
+      <article>
+        <h3>Combining Transformer-based Architectures for Stance Detection</h3>
+        <p>EVALITA · 2020</p>
+        <a href="https://ceur-ws.org/Vol-2765/paper99.pdf" target="_blank" rel="noopener">Read the paper ↗</a>
+      </article>
+    </div>
+  </section>
 
-<section class="experience">
-  <h2>💼 Experience</h2>
-<br>
-  <div class="job">
-    <h4>🚀 Lead ML Engineer</h4>
-    <p><strong>Stip AI</strong> | Rome, Italy | Sep 2024 - Present</p>
-    <p>Leading end-to-end machine learning projects, coordinating R&D efforts, and driving innovation in AI product solutions. Focused on building scalable models and enhancing team productivity through efficient project management and collaboration.</p>
-  </div>
-  
-  <div class="job">
-    <h4>🖥️ MLOps Engineer - AI Production Team Lead</h4>
-    <p><strong>Translated</strong> | Rome, Italy | Dec 2023 - Sep 2024</p>
-    <p>Established a Kubernetes cluster for AI application training and deployment. Oversaw both internal and external AI tools development, emphasizing model optimization and deployment automation streamlining.</p>
-  </div>
-  
-  <div class="job">
-    <h4>🤖 Machine Learning Engineer - AI Production Team Lead</h4>
-    <p><strong>Translated</strong> | Rome, Italy | Feb 2022 - Dec 2023</p>
-    <p>Led the AI production team, managing two people, overseeing the creation of advanced Neural Machine Translation and Text-to-Speech models. Developed data pipelines, complete model pipelines, MLOps workflows, and optimized multi-GPU training setups.</p>
-  </div>
-  
-  <div class="job">
-    <h4>📊 AI Specialist</h4>
-    <p><strong>Stip</strong> | Rome, Italy | Sep 2021 - Feb 2022</p>
-    <p>Created cutting-edge NLP solutions for customer care applications. Conducted thorough data analysis and designed robust data pipelines. Specialized in training, testing, and optimizing Deep Learning models, as well as developing end-to-end ML production pipelines.</p>
-  </div>
-  
-  <div class="job">
-    <h4>📚 NLP Research Scholarship</h4>
-    <p><strong>University of Rome "Tor Vergata" in collaboration with AlmaWave</strong> | Rome, Italy | Sep 2020 - Feb 2021</p>
-    <p>Conducted research on integrating rule injection in Neural Networks for dialog system development. Investigated Natural Language Inference (NLI) with a focus on enhancing dialog systems. Published <em>"Every time I fire a conversational designer, the performance of the dialog system goes down"</em> in LREC 2022.</p>
-  </div>
-</section>
+  <section class="details">
+    <div>
+      <h2>Certifications</h2>
+      <ul>
+        <li>DeepLearning.AI · Introduction to Machine Learning in Production (2021)</li>
+        <li>Udemy · Docker and Kubernetes: The Complete Guide (2021)</li>
+        <li>HackerRank · REST API (Intermediate) (2020)</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Languages</h2>
+      <ul>
+        <li>Italian · Native</li>
+        <li>English · B2</li>
+      </ul>
+    </div>
+  </section>
 
+  </div>
 
+  <style>
+    .about-page {
+      display: grid;
+      gap: 3rem;
+    }
+
+    .about-page section {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .about-page .timeline-grid article header h3 {
+      margin-bottom: 0.25rem;
+    }
+
+    @media (max-width: 720px) {
+      .about-page {
+        gap: 2.25rem;
+      }
+
+      .about-page section {
+        gap: 1.25rem;
+      }
+    }
+  </style>
 
 </Layout>

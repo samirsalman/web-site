@@ -14,57 +14,435 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <body>
 	<Header />
-	<main>
-		<h1>👋 Hi, I'm <b>Samir Salman</b></h1>
-		<p>
-			I am a seasoned MLOps Engineer specializing in <b>Natural Language Processing (NLP)</b> applications.
-			My proficiency lies in orchestrating the end-to-end process of training, building, and deploying models into
-			production environments.
-			With a primary focus on NLP tasks, including <b>Machine Translation</b>, <b>Text Classification</b>,
-			<b>Summarization</b>, and <b>Semantic Search</b>,.
-			I aim to seamlessly connect research endeavors with practical deployment, driving tangible outcomes.
-			My ultimate objective is to facilitate the seamless transition of cutting-edge NLP innovations into
-			real-world applications, ensuring impactful results.
-		</p>
-		<p>
-			Currently I'm focusing on:
-		<ul>
-			<li> 🔎 RAG system in production </li>
-			<li> 🤖 AI agents </li>
-			<li> 🔃 MLOps flows </li>
-		</ul>
-		</p>
+	<main class="home">
+		<section class="hero">
+			<p class="eyebrow">Lead ML Engineer @ Stip AI • Based in Rome</p>
+			<h1>Building resilient AI infrastructure and human-centered agents.</h1>
+			<p class="intro">
+				I design and scale Retrieval-Augmented Generation pipelines, multi-agent voice systems, and GPU-first MLOps
+				platforms that take products from research to production. Previously, I led AI production at Translated,
+				automating deployments for 100+ machine translation models.
+			</p>
+			<div class="cta-group">
+				<a class="cta primary" href="mailto:samirsalman.dev@gmail.com">Let’s collaborate</a>
+				<a class="cta secondary" href="https://www.linkedin.com/in/samir-salman-9bb92112a/" target="_blank"
+					rel="noopener">LinkedIn</a>
+				<a class="cta secondary" href="https://github.com/samirsalman" target="_blank" rel="noopener">GitHub</a>
+			</div>
+		</section>
 
-		<h3>
-			📦 Some of my GitHub repositories:
-		</h3>
+		<section class="impact">
+			<h2>Impact at a glance</h2>
+			<div class="impact-grid">
+				<div class="metric">
+					<span class="metric-value">100+</span>
+					<span class="metric-label">production MT models deployed with automated pipelines</span>
+				</div>
+				<div class="metric">
+					<span class="metric-value">30%</span>
+					<span class="metric-label">idle time saved with custom distributed training framework</span>
+				</div>
+				<div class="metric">
+					<span class="metric-value">100k+</span>
+					<span class="metric-label">human-labeled datapoints generated via in-house tooling</span>
+				</div>
+			</div>
+		</section>
 
-		<ul>
-			<li>
-				📰 <a href="https://github.com/samirsalman/notiziario">Notiziario</a> - Notiziario is a Python
-				application
-				designed to enrich news articles with additional information using Large Language Models (LLMs). It
-				retrieves news articles periodically, cleans their summaries, extracts entities, sentiments, categories,
-				and keywords using an LLM, and stores the enriched data in a knowledge base.
-			<li>
-				📜 <a href="https://github.com/samirsalman/docugenius">Docugenius</a> - Docugenius is a tool that
-				generates
-				documentation for your python code using LLMs. The library provides a simple CLI interface to generate
-				using genAI.
-			</li>
-			<li>
-				🖤 <a href="https://github.com/samirsalman/neuropulse">Neuropulse</a> - A GPU monitoring tool for NVIDIA
-				GPUs. It is a simple tool that can be used to monitor the GPU usage and temperature of NVIDIA GPUs. It
-				is written in Python and uses the nvidia-smi tool to get the GPU information. It can be used to monitor
-				the GPU usage and temperature of multiple GPUs in a node or in a cluster (using a mongoDB database).
-			</li>
-			<li>
-				🧐 <a href="https://github.com/samirsalman/it-classifier-onnx-deploy">Simple ONNX deployment example</a>
-				This is a simple example of how to deploy an ONNX model using FastAPI.
-			</li>
+		<section class="focus">
+			<h2>Current focus areas</h2>
+			<ul>
+				<li><strong>Retrieval-Augmented Generation at scale:</strong> metadata-rich ingestion, safety guardrails, and
+					latency-sensitive serving.</li>
+				<li><strong>Multi-agent voice systems:</strong> real-time customer experiences powered by LangGraph &
+					LangChain orchestration.</li>
+				<li><strong>MLOps foundations:</strong> platform reliability across Kubernetes, SLURM, and NVIDIA DGX
+					infrastructure.</li>
+			</ul>
+		</section>
 
-		</ul>
+		<section class="experience-preview">
+			<h2>Where I make an impact</h2>
+			<div class="experience-cards">
+				<article>
+					<h3>Stip AI · Lead ML Engineer</h3>
+					<p>Shaping the company’s AI roadmap, from multi-agent platform design to production-grade RAG systems and
+						voice assistants.</p>
+				</article>
+				<article>
+					<h3>Translated · AI Production Team Lead</h3>
+					<p>Owned on-prem infrastructure, automated CI/CD for deep learning, and mentored engineers shipping MT and TTS
+						models worldwide.</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="projects">
+			<div class="section-heading">
+				<h2>Featured work</h2>
+				<a class="section-link" href="https://github.com/samirsalman?tab=repositories" target="_blank"
+					rel="noopener">Explore all repositories ↗</a>
+			</div>
+			<div class="project-grid">
+				<article>
+					<h3><a href="https://github.com/samirsalman/AmazonOffers-TelegramBot" target="_blank" rel="noopener">AmazonOffers-TelegramBot</a></h3>
+					<p>A 150+⭐ Python bot that monitors Amazon deals and broadcasts curated drops to thousands of subscribers with
+						minimal latency.</p>
+					<ul>
+						<li>Python</li>
+						<li>Serverless automations</li>
+					</ul>
+				</article>
+				<article>
+					<h3><a href="https://github.com/samirsalman/docugenius" target="_blank" rel="noopener">Docugenius</a></h3>
+					<p>CLI toolkit that leverages LLMs to generate consistent docstrings, improving engineering velocity and knowledge
+						transfer.</p>
+					<ul>
+						<li>Python</li>
+						<li>LLM</li>
+					</ul>
+				</article>
+				<article>
+					<h3><a href="https://github.com/samirsalman/distillai" target="_blank" rel="noopener">DistillAI</a></h3>
+					<p>PyTorch Lightning extension that packages best practices for knowledge distillation into a friendly, reusable
+						training loop.</p>
+					<ul>
+						<li>PyTorch Lightning</li>
+						<li>Knowledge Distillation</li>
+					</ul>
+				</article>
+				<article>
+					<h3><a href="https://github.com/samirsalman/neuropulse" target="_blank" rel="noopener">Neuropulse</a></h3>
+					<p>Lightweight GPU observability toolkit that keeps distributed clusters healthy with visual telemetry and
+						alerts.</p>
+					<ul>
+						<li>Observability</li>
+						<li>NVIDIA CUDA</li>
+					</ul>
+				</article>
+				<article>
+					<h3><a href="https://github.com/samirsalman/notiziario" target="_blank" rel="noopener">Notiziario</a></h3>
+					<p>Streaming pipeline that enriches news articles with LLM-assisted metadata, powering smarter editorial search and
+						retrieval.</p>
+					<ul>
+						<li>LLM pipelines</li>
+						<li>FastAPI</li>
+					</ul>
+				</article>
+				<article>
+					<h3><a href="https://github.com/samirsalman/burocratese" target="_blank" rel="noopener">Burocratese</a></h3>
+					<p>Simplify bureaucracy. An AI agent that translates complex legal, fiscal, and bureaucratic documents into clear, plain language.</p>
+					<ul>
+						<li>LangGraph</li>
+						<li>Qdrant</li>
+						<li>Docling</li>
+					</ul>
+				</article>
+			</div>
+		</section>
+
+		<section class="playground" id="nerd-playground">
+			<h2>Nerd playground</h2>
+			<p>Guide the cache-hungry snake to ingest rogue data packets before the latency monster wakes up.</p>
+			<div class="game-card" data-game>
+				<div class="game-header">
+					<div class="game-header-main">
+						<p class="game-instructions" id="game-instructions">Use arrow keys or WASD to steer. Collect eight packets to unlock a nerdy lab note.</p>
+						<button type="button" id="game-toggle" class="cta primary">Boot sequence</button>
+					</div>
+				</div>
+				<div class="game-stage">
+					<canvas id="game-canvas" width="360" height="360" role="img"
+						aria-label="Snake game grid where a purple snake eats glowing data packets"></canvas>
+					<p class="game-status" id="game-status" aria-live="polite"></p>
+				</div>
+				<div class="game-stats" aria-live="polite">
+					<span>Score: <strong id="game-score">0</strong></span>
+					<span>Best: <strong id="game-best">0</strong></span>
+				</div>
+				<div class="game-quote" id="game-quote" hidden>
+					<p>You won! Final nerd note:</p>
+					<blockquote>“Victory tastes like cache hits. Keep your snakes vectorized and your latency low.”</blockquote>
+				</div>
+			</div>
+		</section>
 	</main>
+	<script>
+		const GRID_SIZE = 15;
+		const CELL_SIZE = 24;
+		const TICK_MS = 150;
+		const TARGET_SCORE = 8;
+		const STORAGE_KEY = 'nerdSnakeBestScore';
+
+		const canvas = document.getElementById('game-canvas');
+		const ctx = canvas?.getContext('2d');
+		const toggleBtn = document.getElementById('game-toggle');
+		const scoreEl = document.getElementById('game-score');
+		const bestEl = document.getElementById('game-best');
+		const statusEl = document.getElementById('game-status');
+		const quoteEl = document.getElementById('game-quote');
+		let animationId;
+		let lastTick = 0;
+		let bestScore = 0;
+		let gameState;
+
+		const loadBestScore = () => {
+			try {
+				const stored = window.localStorage.getItem(STORAGE_KEY);
+				if (stored) {
+					bestScore = Number.parseInt(stored, 10) || 0;
+				}
+			} catch (_error) {
+				bestScore = 0;
+			}
+			if (bestEl) {
+				bestEl.textContent = String(bestScore);
+			}
+		};
+
+		const saveBestScore = () => {
+			try {
+				window.localStorage.setItem(STORAGE_KEY, String(bestScore));
+			} catch (_error) {
+				/* noop */
+			}
+		};
+
+		const setStatus = (message) => {
+			if (statusEl) {
+				statusEl.textContent = message;
+			}
+		};
+
+		const updateScore = () => {
+			if (scoreEl && gameState) {
+				scoreEl.textContent = String(gameState.score);
+			}
+		};
+
+		const setQuoteVisible = (isVisible) => {
+			if (quoteEl) {
+				quoteEl.hidden = !isVisible;
+			}
+		};
+
+		const randomInt = (max) => Math.floor(Math.random() * max);
+		const keyFor = (x, y) => `${x}:${y}`;
+
+		const spawnFood = (snake) => {
+			const occupied = new Set(snake.map((segment) => keyFor(segment.x, segment.y)));
+			let candidate = { x: randomInt(GRID_SIZE), y: randomInt(GRID_SIZE) };
+			let safety = 0;
+			while (occupied.has(keyFor(candidate.x, candidate.y)) && safety < 200) {
+				candidate = { x: randomInt(GRID_SIZE), y: randomInt(GRID_SIZE) };
+				safety += 1;
+			}
+			return candidate;
+		};
+
+		const resetGameState = () => {
+			const centerY = Math.floor(GRID_SIZE / 2);
+			const centerX = Math.floor(GRID_SIZE / 2);
+			const snake = [
+				{ x: centerX, y: centerY },
+				{ x: centerX - 1, y: centerY },
+				{ x: centerX - 2, y: centerY },
+			];
+			return {
+				snake,
+				direction: { x: 1, y: 0 },
+				nextDirection: { x: 1, y: 0 },
+				food: spawnFood(snake),
+				score: 0,
+				isRunning: false,
+				isDone: false,
+			};
+		};
+
+		const stopLoop = () => {
+			if (animationId) {
+				cancelAnimationFrame(animationId);
+				animationId = undefined;
+			}
+		};
+
+		const drawBoard = () => {
+			if (!ctx || !canvas || !gameState) return;
+			ctx.fillStyle = '#100826';
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+			ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+			for (let i = 0; i <= GRID_SIZE; i += 1) {
+				ctx.beginPath();
+				ctx.moveTo(i * CELL_SIZE, 0);
+				ctx.lineTo(i * CELL_SIZE, canvas.height);
+				ctx.stroke();
+				ctx.beginPath();
+				ctx.moveTo(0, i * CELL_SIZE);
+				ctx.lineTo(canvas.width, i * CELL_SIZE);
+				ctx.stroke();
+			}
+
+			gameState.snake.forEach((segment, index) => {
+				ctx.fillStyle = index === 0 ? '#b388ff' : 'rgba(179, 136, 255, 0.8)';
+				ctx.fillRect(segment.x * CELL_SIZE, segment.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+			});
+
+			ctx.fillStyle = '#80ffd3';
+			const foodX = gameState.food.x * CELL_SIZE + CELL_SIZE / 2;
+			const foodY = gameState.food.y * CELL_SIZE + CELL_SIZE / 2;
+			ctx.beginPath();
+			ctx.arc(foodX, foodY, CELL_SIZE / 3, 0, Math.PI * 2);
+			ctx.fill();
+		};
+
+		const handleWin = () => {
+			if (!gameState) return;
+			gameState.isRunning = false;
+			gameState.isDone = true;
+			stopLoop();
+			setStatus('All packets ingested! Bask in the nerd wisdom below.');
+			toggleBtn && (toggleBtn.textContent = 'Run again');
+			setQuoteVisible(true);
+			if (gameState.score > bestScore) {
+				bestScore = gameState.score;
+				if (bestEl) {
+					bestEl.textContent = String(bestScore);
+				}
+				saveBestScore();
+			}
+		};
+
+		const handleCrash = () => {
+			if (!gameState) return;
+			gameState.isRunning = false;
+			gameState.isDone = true;
+			stopLoop();
+			setStatus('Firewall collision! Press “Run again” to debug the path.');
+			toggleBtn && (toggleBtn.textContent = 'Run again');
+			setQuoteVisible(false);
+		};
+
+		const step = () => {
+			if (!gameState) return;
+			const { snake, direction, nextDirection, food } = gameState;
+			const newDirection = nextDirection;
+			gameState.direction = newDirection;
+			const head = {
+				x: snake[0].x + newDirection.x,
+				y: snake[0].y + newDirection.y,
+			};
+
+			const hitWall = head.x < 0 || head.x >= GRID_SIZE || head.y < 0 || head.y >= GRID_SIZE;
+			const hitSelf = snake.some((segment) => segment.x === head.x && segment.y === head.y);
+			if (hitWall || hitSelf) {
+				handleCrash();
+				return;
+			}
+
+			snake.unshift(head);
+			if (head.x === food.x && head.y === food.y) {
+				gameState.score += 1;
+				updateScore();
+				if (gameState.score >= TARGET_SCORE) {
+					handleWin();
+					return;
+				}
+				setStatus(`Packet secured! ${TARGET_SCORE - gameState.score} to go.`);
+				gameState.food = spawnFood(snake);
+			} else {
+				snake.pop();
+			}
+
+			drawBoard();
+		};
+
+		const loop = (timestamp) => {
+			if (!gameState?.isRunning) return;
+			if (timestamp - lastTick >= TICK_MS) {
+				lastTick = timestamp;
+				step();
+			}
+			animationId = requestAnimationFrame(loop);
+		};
+
+		const startGame = () => {
+			if (!ctx || !canvas) return;
+			gameState = resetGameState();
+			setQuoteVisible(false);
+			updateScore();
+			setStatus('Collect 8 packets before latency spikes. Go!');
+			toggleBtn && (toggleBtn.textContent = 'Restart run');
+			lastTick = 0;
+			gameState.isRunning = true;
+			gameState.isDone = false;
+			drawBoard();
+			stopLoop();
+			animationId = requestAnimationFrame(loop);
+		};
+
+		const directionFromKey = (key) => {
+			switch (key) {
+				case 'ArrowUp':
+				case 'w':
+				case 'W':
+					return { x: 0, y: -1 };
+				case 'ArrowDown':
+				case 's':
+				case 'S':
+					return { x: 0, y: 1 };
+				case 'ArrowLeft':
+				case 'a':
+				case 'A':
+					return { x: -1, y: 0 };
+				case 'ArrowRight':
+				case 'd':
+				case 'D':
+					return { x: 1, y: 0 };
+				default:
+					return null;
+			}
+		};
+
+		const queueDirection = (direction) => {
+			if (!gameState || !direction) return;
+			const { x, y } = direction;
+			const current = gameState.direction;
+			if (x === -current.x && y === -current.y) {
+				return;
+			}
+			gameState.nextDirection = direction;
+		};
+
+		const handleKeydown = (event) => {
+			const direction = directionFromKey(event.key);
+			if (!direction) {
+				return;
+			}
+			event.preventDefault();
+			if (!gameState?.isRunning && !gameState?.isDone) {
+				startGame();
+			}
+			queueDirection(direction);
+		};
+
+		const init = () => {
+			if (!canvas || !ctx) return;
+			canvas.width = GRID_SIZE * CELL_SIZE;
+			canvas.height = GRID_SIZE * CELL_SIZE;
+			loadBestScore();
+			gameState = resetGameState();
+			drawBoard();
+			updateScore();
+			setStatus('Press “Boot sequence” or tap an arrow key to begin.');
+			setQuoteVisible(false);
+		};
+
+		if (typeof window !== 'undefined' && canvas && toggleBtn) {
+			init();
+			document.addEventListener('keydown', handleKeydown);
+			toggleBtn.addEventListener('click', startGame);
+		}
+	</script>
 	<Footer />
 </body>
 

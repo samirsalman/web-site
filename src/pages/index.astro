@@ -147,7 +147,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			<div class="game-card" data-game>
 				<div class="game-header">
 					<div class="game-header-main">
-						<p class="game-instructions" id="game-instructions">Use arrow keys or WASD to steer. Collect eight packets to unlock a nerdy lab note.</p>
+						<p class="game-instructions" id="game-instructions">Use arrow keys, WASD, swipes, or the on-screen pad to steer. Collect eight packets to unlock a nerdy lab note.</p>
 						<button type="button" id="game-toggle" class="cta primary">Boot sequence</button>
 					</div>
 				</div>
@@ -155,6 +155,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 					<canvas id="game-canvas" width="360" height="360" role="img"
 						aria-label="Snake game grid where a purple snake eats glowing data packets"></canvas>
 					<p class="game-status" id="game-status" aria-live="polite"></p>
+					<div class="game-controls" id="game-controls" role="group" aria-label="Directional controls">
+						<button type="button" class="game-control" data-direction="up">
+							<span aria-hidden="true">↑</span>
+							<span class="sr-only">Move up</span>
+						</button>
+						<button type="button" class="game-control" data-direction="left">
+							<span aria-hidden="true">←</span>
+							<span class="sr-only">Move left</span>
+						</button>
+						<button type="button" class="game-control" data-direction="down">
+							<span aria-hidden="true">↓</span>
+							<span class="sr-only">Move down</span>
+						</button>
+						<button type="button" class="game-control" data-direction="right">
+							<span aria-hidden="true">→</span>
+							<span class="sr-only">Move right</span>
+						</button>
+					</div>
 				</div>
 				<div class="game-stats" aria-live="polite">
 					<span>Score: <strong id="game-score">0</strong></span>
@@ -181,10 +199,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		const bestEl = document.getElementById('game-best');
 		const statusEl = document.getElementById('game-status');
 		const quoteEl = document.getElementById('game-quote');
+		const controlsEl = document.getElementById('game-controls');
 		let animationId;
 		let lastTick = 0;
 		let bestScore = 0;
 		let gameState;
+		let touchStartPoint;
 
 		const loadBestScore = () => {
 			try {
@@ -229,6 +249,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		const randomInt = (max) => Math.floor(Math.random() * max);
 		const keyFor = (x, y) => `${x}:${y}`;
 
+		const directionFromName = (name) => {
+			switch (name) {
+				case 'up':
+					return { x: 0, y: -1 };
+				case 'down':
+					return { x: 0, y: 1 };
+				case 'left':
+					return { x: -1, y: 0 };
+				case 'right':
+					return { x: 1, y: 0 };
+				default:
+					return null;
+			}
+		};
+
 		const spawnFood = (snake) => {
 			const occupied = new Set(snake.map((segment) => keyFor(segment.x, segment.y)));
 			let candidate = { x: randomInt(GRID_SIZE), y: randomInt(GRID_SIZE) };
@@ -257,6 +292,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				isRunning: false,
 				isDone: false,
 			};
+		};
+
+		const maybeStart = () => {
+			if (!gameState?.isRunning && !gameState?.isDone) {
+				startGame();
+			}
 		};
 
 		const stopLoop = () => {
@@ -419,10 +460,65 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				return;
 			}
 			event.preventDefault();
-			if (!gameState?.isRunning && !gameState?.isDone) {
-				startGame();
-			}
+			maybeStart();
 			queueDirection(direction);
+		};
+
+		const handleControlInput = (event) => {
+			const target = event.target.closest('[data-direction]');
+			if (!target) return;
+			event.preventDefault();
+			const direction = directionFromName(target.dataset.direction);
+			if (!direction) return;
+			maybeStart();
+			queueDirection(direction);
+		};
+
+		const handleControlPointerDown = (event) => {
+			if (event.pointerType === 'mouse') {
+				return;
+			}
+			handleControlInput(event);
+		};
+
+		const handleTouchStart = (event) => {
+			if (!event.touches.length) return;
+			const touch = event.touches[0];
+			touchStartPoint = { x: touch.clientX, y: touch.clientY };
+			event.preventDefault();
+		};
+
+		const handleTouchMove = (event) => {
+			if (gameState?.isRunning) {
+				event.preventDefault();
+			}
+		};
+
+		const handleTouchEnd = (event) => {
+			if (!touchStartPoint || !event.changedTouches.length) return;
+			const touch = event.changedTouches[0];
+			const deltaX = touch.clientX - touchStartPoint.x;
+			const deltaY = touch.clientY - touchStartPoint.y;
+			const absX = Math.abs(deltaX);
+			const absY = Math.abs(deltaY);
+			const SWIPE_THRESHOLD = 24;
+			if (absX < SWIPE_THRESHOLD && absY < SWIPE_THRESHOLD) {
+				maybeStart();
+				touchStartPoint = undefined;
+				return;
+			}
+			let direction;
+			if (absX > absY) {
+				direction = directionFromName(deltaX > 0 ? 'right' : 'left');
+			} else {
+				direction = directionFromName(deltaY > 0 ? 'down' : 'up');
+			}
+			if (direction) {
+				maybeStart();
+				queueDirection(direction);
+			}
+			touchStartPoint = undefined;
+			event.preventDefault();
 		};
 
 		const init = () => {
@@ -441,6 +537,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			init();
 			document.addEventListener('keydown', handleKeydown);
 			toggleBtn.addEventListener('click', startGame);
+			if (controlsEl) {
+				controlsEl.addEventListener('click', handleControlInput);
+				controlsEl.addEventListener('pointerdown', handleControlPointerDown);
+			}
+			if (canvas) {
+				canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
+				canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+				canvas.addEventListener('touchend', handleTouchEnd, { passive: false });
+			}
 		}
 	</script>
 	<Footer />

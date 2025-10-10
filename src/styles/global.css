@@ -443,6 +443,35 @@ section {
 	grid-area: stage;
 }
 
+.game-controls {
+	display: none;
+	width: 100%;
+}
+
+.game-control {
+	appearance: none;
+	border: 1px solid rgba(179, 136, 255, 0.35);
+	background: rgba(179, 136, 255, 0.12);
+	color: var(--text-primary);
+	font-size: 1.5rem;
+	border-radius: 18px;
+	padding: 0.65rem 0.8rem;
+	box-shadow: 0 8px 30px rgba(17, 5, 36, 0.35);
+	transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.game-control:active,
+.game-control:focus-visible {
+	background: rgba(179, 136, 255, 0.24);
+	transform: translateY(1px);
+	outline: none;
+	border-color: rgba(179, 136, 255, 0.6);
+}
+
+.game-control span[aria-hidden="true"] {
+	line-height: 1;
+}
+
 .game-stage canvas {
 	width: min(100%, 360px);
 	height: auto;
@@ -511,6 +540,10 @@ section {
 
 	.game-stage {
 		gap: 1.2rem;
+	}
+
+	.game-controls {
+		display: none;
 	}
 
 	.game-stats {
@@ -669,5 +702,37 @@ body {
 
 	.metric {
 		padding: 1.25rem;
+
+		.game-controls {
+			display: grid;
+			gap: 0.6rem;
+			max-width: 260px;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			grid-template-areas:
+				". up ."
+				"left . right"
+				". down .";
+		}
+
+		.game-control[data-direction="up"] {
+			grid-area: up;
+		}
+
+		.game-control[data-direction="down"] {
+			grid-area: down;
+		}
+
+		.game-control[data-direction="left"] {
+			grid-area: left;
+		}
+
+		.game-control[data-direction="right"] {
+			grid-area: right;
+		}
+
+		.game-control {
+			padding: 0.75rem 0.5rem;
+			font-size: 1.35rem;
+		}
 	}
 }
